@@ -65,6 +65,10 @@ const _setMapboxMapOptions = (mapView: MGLMapView, settings) => {
 
   mapView.showsUserLocation = settings.showUserLocation;
 
+  if (settings.locationLayerOptions && settings.locationLayerOptions.foregroundTintColor) {
+    mapView.tintColor = settings.locationLayerOptions.foregroundTintColor instanceof Color ? settings.locationLayerOptions.foregroundTintColor.ios : new Color(settings.locationLayerOptions.foregroundTintColor).ios;
+  }
+
   mapView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 };
 

@@ -74,9 +74,29 @@ export interface UserLocation {
 }
 
 export interface LocationLayerOptions {
+  /**
+   * Android only
+   * The color of the accuracy radius
+   */
   accuracyColor?: string;
+
+  /**
+   * Android only
+   * The color of the bearing arrow (when enabled)
+   */
   bearingTintColor?: string;
+
+  /**
+   * Android only
+   * The color of the stale location marker
+   */
   foregroundStaleTintColor?: string;
+
+  /**
+   * Android/iOS
+   * The color of the location marker
+   * Note: sets MGLMapView.tintColor on iOS which changes the overall tint color of the marker, including accuracy radius
+   */
   foregroundTintColor?: string;
 }
 
